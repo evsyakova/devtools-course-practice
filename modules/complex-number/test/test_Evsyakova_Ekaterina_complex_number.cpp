@@ -38,7 +38,7 @@ Order_Of_Actions_addition_and_subtraction_Is_Not_Important) {
 }
 
 TEST(Evsyakova_Ekaterina_ComplexNumberTest,
-Order_Of_Actions_multiplication_and_division_Is_Not_Important) {
+Order_Of_Actions_multiplication_and_division_Are_Not_Important) {
     double re1 = 8.0;
     double re2 = 10.0;
     double re3 = 2.0;
