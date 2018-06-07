@@ -299,8 +299,7 @@ operator/(const ArbitraryPrecisionCalculator& z) const {
 
 const ArbitraryPrecisionCalculator ArbitraryPrecisionCalculator::
 operator/(const int & z) const {
-    if (z == 0)
-        throw std::string("Can't divide by zero");
+    // if (z == 0) throw std::string("Can't divide by zero");
 
     int size = (*this).number.size();
     std::string str_for_res;
