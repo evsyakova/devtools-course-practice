@@ -93,7 +93,7 @@ The_Operation_division_Is_Not_Commutative) {
 
 TEST(Evsyakova_Ekaterina_ComplexNumberTest,
 The_Operation_Comparison_of_equal_numbers_return_true) {
-    double re3 = 1.5;
+    double re1 = 1.5;
     double im1 = -125.96;
     double re2 = re1;
     double im2 = im1;
