@@ -336,7 +336,7 @@ TEST_F(ArbitraryPrecisionCalculatorTest, Cannot_Divide_By_Zero) {
     ArbitraryPrecisionCalculator z1("324546789888765434567890987654323");
 
     // Act & Assert
-    ASSERT_ANY_THROW(z1 / 0);
+    ASSERT_ANY_THROW(z1 / static_cast<ArbitraryPrecisionCalculator>(0));
 }
 
 TEST_F(ArbitraryPrecisionCalculatorTest, Number_Is_Equal_To_Itself) {
