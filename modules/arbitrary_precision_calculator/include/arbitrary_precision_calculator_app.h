@@ -16,8 +16,8 @@ class ArbitraryPrecisionCalculatorApp {
     bool validateNumberOfArguments(int argc, const char** argv);
     std::string message_;
     typedef struct {
-        std::vector<int> z1;
-        std::vector<int> z2;
+        std::vector<int> left_operand;
+        std::vector<int> right_operand;
         char operation;
     } Arguments;
 };

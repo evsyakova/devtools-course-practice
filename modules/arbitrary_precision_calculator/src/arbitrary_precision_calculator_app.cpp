@@ -22,7 +22,7 @@ void ArbitraryPrecisionCalculatorApp::help(const char* appname,
         "This is an arbitrary precision calculator application.\n\n" +
         "Please provide arguments in the following format:\n\n" +
 
-        "  $ " + appname + " <z1> <z2> <operation>\n\n" +
+        "  $ " + appname + " <left_operand> <right_operand> <operation>\n\n" +
 
         "Where all arguments are integer (infinite-precision) numbers, " +
         "and <operation> is one of '+', '-', '*', '/'.\n";
@@ -72,19 +72,19 @@ std::vector <int> parseNumber(const char* arg) {
 }
 
 char parseOperation(const char* arg) {
-    char op;
+    char operation;
     if (strcmp(arg, "+") == 0) {
-        op = '+';
+        operation = '+';
     } else if (strcmp(arg, "-") == 0) {
-        op = '-';
+        operation = '-';
     } else if (strcmp(arg, "*") == 0) {
-        op = '*';
+        operation = '*';
     } else if (strcmp(arg, "/") == 0) {
-        op = '/';
+        operation = '/';
     } else {
         throw std::string("Wrong operation format!");
     }
-    return op;
+    return operation;
 }
 
 std::string ArbitraryPrecisionCalculatorApp::operator()
@@ -95,8 +95,8 @@ std::string ArbitraryPrecisionCalculatorApp::operator()
         return message_;
     }
     try {
-        args.z1 = parseNumber(argv[1]);
-        args.z2 = parseNumber(argv[2]);
+        args.left_operand = parseNumber(argv[1]);
+        args.right_operand = parseNumber(argv[2]);
         args.operation = parseOperation(argv[3]);
     }
     catch (std::string& str) {
@@ -106,8 +106,8 @@ std::string ArbitraryPrecisionCalculatorApp::operator()
     ArbitraryPrecisionCalculator z1;
     ArbitraryPrecisionCalculator z2;
 
-    z1.setNumber(args.z1);
-    z2.setNumber(args.z2);
+    z1.setNumber(args.left_operand);
+    z2.setNumber(args.right_operand);
 
     ArbitraryPrecisionCalculator z;
     std::ostringstream stream;
